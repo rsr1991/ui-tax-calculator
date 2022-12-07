@@ -59,8 +59,8 @@ const FormInput = (props) => {
             <label>
               {label}
               <select className="select" onChange={onChange}  {...inputProps}>
-                <option value={0.8}>0.80%</option>
-                <option value={1.8}>1.80%</option>
+                <option value={0.8}>Tarjeta de Débito (0.80%)</option>
+                <option selected value={1.8}>Tarjeta de Crédito (1.80%)</option>
               </select>
             </label>
           </div>

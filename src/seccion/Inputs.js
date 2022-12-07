@@ -1,11 +1,21 @@
 export const inputs = [
   {
+    id: 3,
+    name: "impuestoBruto",
+    type: "text",
+    errorMessage:
+      "Solo numeros",
+    label: "Importe Transacción ($AR)",
+    pattern: "^[0-9]+([.][0-9]+)?$",
+    required: true,
+  },
+  {
     id: 1,
     name: "tasa",
     type: "text",
     errorMessage:
       "Solo numeros",
-    label: "Tasa",
+    label: "Tasa (TNA - %)",
     pattern: "^[0-9]+([.][0-9]+)?$",
     required: true,
   },
@@ -15,27 +25,18 @@ export const inputs = [
     type: "text",
     errorMessage:
       "Solo numeros",
-    label: "Dias Adelantado",
+    label: "Dias de Adelanto",
     pattern: "^[0-9]+([.][0-9]+)?$",
     required: true,
   },
-  {
-    id: 3,
-    name: "impuestoBruto",
-    type: "text",
-    errorMessage:
-      "Solo numeros",
-    label: "Importe Bruto",
-    pattern: "^[0-9]+([.][0-9]+)?$",
-    required: true,
-  },
+
   {
     id: 4,
     name: "porcentaje",
     type: "text",
     errorMessage:
       "Solo numeros",
-    label: "Arancel",
+    label: "Porcentaje (%) ",
     pattern: "^[0-9]+([.][0-9]+)?$",
     required: true,
   },
@@ -45,7 +46,7 @@ export const inputs = [
     type: "text",
     errorMessage:
       "Solo numeros",
-    label: "CF",
+    label: "Costo Financiero ($AR)",
     pattern: "^[0-9]+([.][0-9]+)?$",
     required: true,
   },
@@ -55,7 +56,7 @@ export const inputs = [
     type: "text",
     errorMessage:
       "Solo numeros",
-    label: "Promo",
+    label: "Descuento Promoción ($AR)",
     pattern: "^[0-9]+([.][0-9]+)?$",
     required: true,
   }

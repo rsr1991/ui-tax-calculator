@@ -38,8 +38,10 @@ const App = () => {
  
   return (
     <div className="app">
-      <form  onSubmit={handleSubmit}>
-        <h1>Calculadora Adelantos</h1>          
+      <div className="contenedor">
+      <div className="logo"></div>
+      <h1 className="titulo">Calculadora de Intereses<br></br>de Pago Expreso</h1>          
+      <form className="formizquierda" onSubmit={handleSubmit}>
         {inputs.map((input) => (
           <FormInput
             flag={true}
@@ -50,11 +52,10 @@ const App = () => {
             onChange={onChange}
           />
         ))}
-        <button>Submit</button>
+        <button>Calcular</button>
       </form>
 
-      <form onSubmit={handleSubmit}>
-        <h1>Resultado</h1>
+      <form className="formderecha" onSubmit={handleSubmit}>
         {result.map((input) => (
           <FormInput
             flag={false}
@@ -67,6 +68,7 @@ const App = () => {
           />
         ))}
       </form>
+    </div>
     </div>
   );
 };

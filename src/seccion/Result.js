@@ -5,7 +5,7 @@ export const result =[
     type: "text",
     errorMessage:
       "OnlyNumber",
-    label: "Impuesto Prisma",
+    label: "Importe Arancel ($AR)",
     pattern: "^[0-9]+([.][0-9]+)?$",
     required: true,
   },
@@ -15,7 +15,7 @@ export const result =[
     type: "text",
     errorMessage:
       "OnlyNumber",
-    label: "Neto",
+    label: "Importe Base ($AR)",
     pattern: "^[0-9]+([.][0-9]+)?$",
     required: true,
   },
@@ -25,7 +25,7 @@ export const result =[
     type: "text",
     errorMessage:
       "OnlyNumber",
-    label: "Total",
+    label: "Intereses ($AR)",
     pattern: "^[0-9]+([.][0-9]+)?$",
     required: true,
   }
