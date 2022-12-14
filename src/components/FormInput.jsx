@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./formInput.css";
-
+import CreatableSelect from 'react-select/creatable';
 
 
 const FormInput = (props) => {
@@ -14,6 +14,13 @@ const FormInput = (props) => {
     arr[0] = arr[0].replace(exp,rep);
     return arr[1] ? arr.join('.'): arr[0];
   }
+
+  const formatCreateLabel = (inputValue) => `Calcular con el ${inputValue}%`;
+
+  const options = [
+    { value: 0.80, label: 'Tarjeta de Débito (0.80%)'},
+    { value: 1.80, label: 'Tarjeta de Crédito (1.80%)'},
+  ]
 
   const handleFocus = (e) => {
     setFocused(true);
@@ -58,10 +65,7 @@ const FormInput = (props) => {
           <div className="formInput">
             <label>
               {label}
-              <select className="select" onChange={onChange}  {...inputProps}>
-                <option value={0.8}>Tarjeta de Débito (0.80%)</option>
-                <option selected value={1.8}>Tarjeta de Crédito (1.80%)</option>
-              </select>
+              <CreatableSelect  {...inputProps} formatCreateLabel={formatCreateLabel} onChange={onChange} isClearable options={options} />
             </label>
           </div>
         )

@@ -22,18 +22,37 @@ const App = () => {
 
   const [impuestoPrisma, setmpuestoPrisma] = useState(0);
 
+  function getImpuestoPrisma() {
+    return values.impuestoBruto*values.porcentaje/100
+  }
+
+  function getNeto() {
+    return values.impuestoBruto-(getImpuestoPrisma())-values.cf-values.promo
+  }
+
+  function getTotal() {
+    return (((values.tasa/365)*values.diasAdelantado)*(getNeto()))/100
+  }
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setmpuestoPrisma(values.impuestoBruto*values.porcentaje/100)
-    setNeto(values.impuestoBruto-(values.impuestoBruto*values.porcentaje/100)-values.cf-values.promo) 
-    setTotal(((((values.tasa/365)*values.diasAdelantado)*(values.impuestoBruto-(values.impuestoBruto*values.porcentaje/100)-values.cf-values.promo))/100))
+    setmpuestoPrisma(getImpuestoPrisma())
+    setNeto(getNeto()) 
+    setTotal(getTotal())
 
   };
 
   const onChange = (e) => {
-    setValues({ ...values, [e.target.name]: e.target.value });
-  };
+    try {    
+      if(e.target === undefined){
+        console.log(e.value)
+        setValues({ ...values, porcentaje: parseFloat(e.value)})
+      }else{
+        setValues({ ...values, [e.target.name]: e.target.value });
+      }
+    } catch (error) { 
+    }  };
 
  
   return (
